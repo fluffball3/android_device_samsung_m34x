@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 
-LOCAL_PATH := device/samsung/a33x
+LOCAL_PATH := device/samsung/m34x
 
 # Bootloader
 BOARD_VENDOR := samsung
@@ -39,11 +39,6 @@ TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := cortex-a53
 TARGET_2ND_CPU_VARIANT_RUNTIME := cortex-a53
 
-TARGET_USES_64_BIT_BINDER := true
-
-TARGET_CPU_SMP := true
-ENABLE_CPUSETS := true
-ENABLE_SCHEDBOOST := true
 
 ALLOW_MISSING_DEPENDENCIES := true
 
@@ -74,7 +69,7 @@ BOARD_KERNEL_TAGS_OFFSET := 0x00000000
 BOARD_DTB_OFFSET := 0x00000000
 BOARD_MKBOOTIMG_ARGS := --kernel_offset $(BOARD_KERNEL_OFFSET) --ramdisk_offset $(BOARD_RAMDISK_OFFSET) 
 BOARD_MKBOOTIMG_ARGS += --tags_offset $(BOARD_KERNEL_TAGS_OFFSET) --second_offset $(BOARD_KERNEL_SECOND_OFFSET)
-BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION) --pagesize $(BOARD_KERNEL_PAGESIZE) --board "SRPUI23A002"
+BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION) --pagesize $(BOARD_KERNEL_PAGESIZE) --board "SRPWC15A002"
 BOARD_MKBOOTIMG_ARGS += --dtb $(TARGET_PREBUILT_DTB) --dtb_offset $(BOARD_DTB_OFFSET)
 BOARD_CUSTOM_BOOTIMG_MK := $(LOCAL_PATH)/mkboot/bootimg.mk
 
@@ -94,7 +89,7 @@ BOARD_SAMSUNG_DYNAMIC_PARTITIONS_SIZE := 11739856896
 BOARD_SAMSUNG_DYNAMIC_PARTITIONS_PARTITION_LIST := system system_ext vendor product odm vendor_dlkm
 
 # System as root
-BOARD_ROOT_EXTRA_FOLDERS := carrier data_mirror debug_ramdisk efs linkerconfig metadata odm_dlkm oem optics postinstall prism second_stage_resources spu system_ext vendor_dlkm
+BOARD_ROOT_EXTRA_FOLDERS := carrier optics prism spu system_ext
 BOARD_SUPPRESS_SECURE_ERASE := true
 
 # Workaround for error copying vendor files to recovery ramdisk
@@ -126,18 +121,18 @@ BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
 DISABLE_ARTIFACT_PATH_REQUIREMENTS := true
 
 # TWRP specific build flags
-TW_DEVICE_VERSION := Samsung Galaxy A33 5G
+TW_DEVICE_VERSION := Samsung Galaxy M34 5G
 TW_INCLUDE_REPACKTOOLS := true
 TW_INCLUDE_LIBRESETPROP := true
 TW_INCLUDE_RESETPROP := true
-TW_FRAMERATE := 90
+TW_FRAMERATE := 120
 TW_INCLUDE_LPTOOLS := true
 TW_THEME := portrait_hdpi
 RECOVERY_SDCARD_ON_DATA := true
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 TW_BRIGHTNESS_PATH := "/sys/class/backlight/panel/brightness"
-TW_MAX_BRIGHTNESS := 612
-TW_DEFAULT_BRIGHTNESS := 255
+TW_MAX_BRIGHTNESS := 255
+TW_DEFAULT_BRIGHTNESS := 127
 TW_Y_OFFSET := 80
 TW_H_OFFSET := -80
 TW_NO_REBOOT_BOOTLOADER := true
@@ -148,7 +143,5 @@ TW_INPUT_BLACKLIST := "hbtp_vm"
 TW_EXCLUDE_DEFAULT_USB_INIT := true
 TW_USE_TOOLBOX := true
 TARGET_USES_MKE2FS := true
-TW_NO_LEGACY_PROPS := true
-TW_NO_BIND_SYSTEM := true
 TW_USE_MODEL_HARDWARE_ID_FOR_DEVICE_ID := true
 TW_BACKUP_EXCLUSIONS := /data/fonts

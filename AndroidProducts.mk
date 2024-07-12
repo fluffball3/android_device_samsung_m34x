@@ -15,6 +15,6 @@
 #
 
 PRODUCT_MAKEFILES := \
-	$(LOCAL_DIR)/twrp_a33x.mk
+	$(LOCAL_DIR)/twrp_m34x.mk
 
-COMMON_LUNCH_CHOICES := twrp_a33x-eng
+COMMON_LUNCH_CHOICES := twrp_m34x-eng

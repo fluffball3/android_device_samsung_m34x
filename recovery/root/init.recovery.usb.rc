@@ -1,7 +1,7 @@
 on init
     setprop sys.usb.configfs 1
     setprop sys.usb.ffs.aio_compat 1
-    setprop vendor.usb.controller ${sys.usb.controller}
+    setprop vendor.usb.controller 13200000.dw3
     setprop vendor.usb.acm_cnt 0
     setprop vendor.usb.acm_port0 ""
     setprop vendor.usb.acm_port1 ""
@@ -14,7 +14,7 @@ on fs
     mount configfs none /config
     mkdir /config/usb_gadget/g1 0770 shell shell
     mkdir /config/usb_gadget/g1/strings/0x409 0770 shell shell
-    write /config/usb_gadget/g1/bcdDevice 0x504
+    write /config/usb_gadget/g1/bcdDevice 0x0504
     write /config/usb_gadget/g1/bcdUSB 0x0200
     write /config/usb_gadget/g1/os_desc/use 1
     write /config/usb_gadget/g1/strings/0x409/serialnumber ${ro.serialno}
@@ -26,7 +26,7 @@ on fs
     write /config/usb_gadget/g1/functions/mtp.gs0/os_desc/interface.MTP/compatible_id "MTP"
     mkdir /config/usb_gadget/g1/configs/b.1 0770 shell shell
     mkdir /config/usb_gadget/g1/configs/b.1/strings/0x409 0770 shell shell
-    write /config/usb_gadget/g1/os_desc/b_vendor_code 0x1
+    write /config/usb_gadget/g1/os_desc/b_vendor_code 0x01
     write /config/usb_gadget/g1/os_desc/qw_sign "MSFT100"
     symlink /config/usb_gadget/g1/configs/b.1 /config/usb_gadget/g1/os_desc/b.1
     mount functionfs adb /dev/usb-ffs/adb uid=2000,gid=2000
@@ -65,7 +65,12 @@ on property:sys.usb.config=fastboot && property:sys.usb.ffs.ready=1 && property:
     setprop sys.usb.state ${sys.usb.config}
 
 on property:sys.usb.config=sideload && property:sys.usb.ffs.ready=1 && property:sys.usb.configfs=1
+    write /config/usb_gadget/g1/configs/b.1/strings/0x409/configuration "adb"
     write /config/usb_gadget/g1/idVendor 0x04E8
+    write /config/usb_gadget/g1/idProduct 0x6860
+    symlink /config/usb_gadget/g1/functions/ffs.adb /config/usb_gadget/g1/configs/b.1/f1
+    write /config/usb_gadget/g1/UDC ${sys.usb.controller}
+    setprop sys.usb.state ${sys.usb.config}
 
 on property:sys.usb.config=mtp && property:sys.usb.configfs=1
     setprop sys.usb.ffs.mtp.ready 1
