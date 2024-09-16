@@ -272,6 +272,7 @@ goodix_ts_berlin.ko
 sm5714_fuelgauge.ko
 sec-direct-charger.ko
 sec_pd.ko
+sb_wireless.ko
 sec-battery.ko
 shub.ko
 sensor_core.ko
