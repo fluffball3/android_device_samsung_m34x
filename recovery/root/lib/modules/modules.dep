@@ -27,7 +27,7 @@
 /lib/modules/s3c2410_wdt.ko: /lib/modules/dss.ko /lib/modules/exynos-pmu-if.ko
 /lib/modules/sm5451-charger.ko: /lib/modules/sec-battery.ko /lib/modules/sec_pd.ko /lib/modules/sb-core.ko /lib/modules/usb_typec_manager.ko /lib/modules/abc.ko /lib/modules/vbus_notifier.ko /lib/modules/pdic_notifier_module.ko /lib/modules/common_muic.ko /lib/modules/if_cb_manager.ko /lib/modules/usb_notify_layer.ko /lib/modules/sec_class.ko /lib/modules/switch_class.ko /lib/modules/sec_debug_extra_info.ko /lib/modules/sec_debug_base_early.ko /lib/modules/sec_debug_dprt.ko /lib/modules/dss.ko /lib/modules/exynos-pmu-if.ko
 /lib/modules/dev_ril_bridge.ko:
-/lib/modules/lvstest.ko: /lib/modules/if_cb_manager.ko
+/lib/modules/lvstest.ko:
 /lib/modules/usbserial.ko:
 /lib/modules/hid-belkin.ko:
 /lib/modules/exynos_tty.ko: /lib/modules/exynos-cpupm.ko /lib/modules/pinctrl-samsung-core.ko /lib/modules/common_muic.ko /lib/modules/if_cb_manager.ko /lib/modules/usb_notify_layer.ko /lib/modules/sec_class.ko /lib/modules/switch_class.ko /lib/modules/exynos-flexpmu-dbg.ko /lib/modules/ems.ko /lib/modules/cmupmucal.ko /lib/modules/exynos-adv-tracer.ko /lib/modules/sec_debug_extra_info.ko /lib/modules/sec_debug_base_early.ko /lib/modules/sec_debug_dprt.ko /lib/modules/exynos-pd_el3.ko /lib/modules/exynos-s2mpu.ko /lib/modules/exynos_pm_qos.ko /lib/modules/exynos_acpm.ko /lib/modules/dss.ko /lib/modules/exynos-pmu-if.ko /lib/modules/exynos-reboot.ko /lib/modules/exynos-chipid_v2.ko /lib/modules/ect_parser.ko
@@ -181,7 +181,6 @@
 /lib/modules/scsc_platform_mif.ko: /lib/modules/scsc_logring.ko /lib/modules/scsc_log_collection.ko /lib/modules/memlogger.ko /lib/modules/freq-qos-tracer.ko /lib/modules/exynos_pm_qos.ko /lib/modules/exynos-chipid_v2.ko
 /lib/modules/hid-keytouch.ko:
 /lib/modules/exynos-el2.ko: /lib/modules/dss.ko /lib/modules/exynos-pmu-if.ko
-/lib/modules/sb_wireless.ko: /lib/modules/sb-core.ko /lib/modules/sec_class.ko
 /lib/modules/sensor_core.ko:
 /lib/modules/sysevent_notif.ko:
 /lib/modules/s2mpu13_mfd.ko: /lib/modules/s2mpu14_mfd.ko /lib/modules/exynos_acpm.ko /lib/modules/dss.ko /lib/modules/exynos-pmu-if.ko /lib/modules/exynos-reboot.ko /lib/modules/exynos-chipid_v2.ko
